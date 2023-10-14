@@ -34,7 +34,6 @@ order by
 	1,2;
 
 
--- Total Cases vs Population
 -- Shows what percentage of population infected with Covid
 
 Select 
@@ -102,7 +101,6 @@ order by
 
 
 
--- Total Population vs Vaccinations
 -- Shows Percentage of Population that has recieved at least one Covid Vaccine
 
 Select 
@@ -119,7 +117,7 @@ order by
 	2,3;
 
 
--- Using CTE to perform Calculation on Partition By in previous query
+-- Window Funtion (Partition)
 
 With PopvsVac (Continent, Location, Date, Population, New_Vaccinations, Rolling_Sum_People_Vaccinated)
 as
@@ -140,7 +138,6 @@ From PopvsVac;
 
 
 
--- Using Temp Table to perform Calculation on Partition By in previous query
 
 DROP Table if exists #Percent_Population_Vaccinated
 Create Table #Percent_Population_Vaccinated
