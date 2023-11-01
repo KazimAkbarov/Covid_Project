@@ -9,8 +9,6 @@ order by
 	3,4;
 
 
--- Select Data that we are going to be starting with
-
 Select 
 	Location, date, total_cases, new_cases, total_deaths, population
 From 
@@ -34,8 +32,6 @@ order by
 	1,2;
 
 
--- Shows what percentage of population infected with Covid
-
 Select 
 	Location, date, Population, total_cases,  round((total_cases/population)*100,2) as Percent_Population_Infected
 From 
@@ -56,7 +52,6 @@ order by
 	Percent_Population_Infected desc, location;
 
 
--- Countries with Highest Death Count per Population
 
 Select 
 	Location, MAX(cast(Total_deaths as int)) as Total_Death_Count
@@ -100,8 +95,6 @@ order by
 	1,2;
 
 
-
--- Shows Percentage of Population that has recieved at least one Covid Vaccine
 
 Select 
 	dt.continent, dt.location, dt.date, dt.population, vac.new_vaccinations
